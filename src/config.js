@@ -1,14 +1,14 @@
 import axios from 'axios'
-import {Toast} from 'antd-mobile'
+import { Toast } from 'antd-mobile'
 
-axios.interceptors.request.use(function(config) {
+axios.interceptors.request.use(function (config) {
   Toast.loading('加载中', 0)
   return config
 })
 
-axios.interceptors.response.use(function(config) {
-  window.setTimeout(()=>{
+axios.interceptors.response.use(function (config) {
+  window.setTimeout(() => {
     Toast.hide()
-  }, 2000)
+  }, 200)
   return config
 })
